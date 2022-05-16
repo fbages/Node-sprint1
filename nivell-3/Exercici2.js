@@ -1,4 +1,3 @@
-const func = (function(element){
-    let x = 5;
+const func = ((element)=>{
     console.log(element);
 })("Francesc")
