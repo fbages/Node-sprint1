@@ -28,5 +28,5 @@ function funcPromise(segons) {
 }
 
 //Segons a esperar que s'executi la Promise
-const segons = 3 ;
+const segons = 3;
 funcAsync(segons * 1000);
