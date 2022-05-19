@@ -5,6 +5,6 @@ const { exec } = require('child_process');
 //Commands van lligats amb &
 exec('cd/ & dir', (err, stdout, stderr) => {
     if (err) console.log(err.message)
-    if (stderr) console.log(stderr)
-    console.log(stdout);
+    if (stderr) console.log(stderr) //output secundari
+    console.log(stdout);    //output primari
 })
