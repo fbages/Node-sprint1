@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Exercicis del tema 1.6 - Testing",
+  "main": "Operacions.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "FBS",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
