@@ -1,7 +1,19 @@
-///////INSTRUCCIONTS//////////
+## **Installation**
+Copiar repo al teu local
+
+## **Usage**
 Per executar el programa:
-    - node Exercici1 or nodemon Exercici1
+```bash
+node Exercici1 
+```
 
+or
 
-//////ERRORS PENDENTS/////////
-Els dos fitxers txt resultats queden codificats en hex i Base64, no sé com tornar-los a fer ascii
+```bash
+nodemon Exercici1
+```
+
+##  **ERRORS PENDENTS**
+```diff
+- Els dos fitxers txt resultants queden codificats en hex i Base64, no sé com tornar-los a fer ascii
+```
