@@ -36,11 +36,9 @@ const cercaPerId = (index) => {
     if (index < employees.length) {
       resolve(employees[index]);
     } else {
-      reject(
-        `Has escollit un index que no correspont a una persona de la llista, l'últim índex és ${
-          employees.length - 1
+      let text = `Has escollit un index que no correspont a una persona de la llista, l'últim índex és ${employees.length - 1
         }.`
-      );
+      reject(text);
     }
   });
 };
@@ -51,36 +49,45 @@ const cercaPerId = (index) => {
 //funcio getSalary
 let index;
 const getSalary = (employee) => {
+  //console.log(employee);
   return new Promise((resolve, reject) => {
     if (employee == undefined) {
-      reject(console.log(`No hi ha cap objecte a employees com l'introduit`));
+      reject(`No hi ha cap objecte a employees com l'introduit`);
     } else {
+      let i = 0;
       employees.map((item) => {
         const resultat = item.id == employee.id ? employee.id : -1;
         //console.log(resultat);
+        i++;
         if (resultat != -1) {
           index = resultat - 1;
           resolve(salaries[index].salary);
         }
+        if (i == employees.length) reject(`No existeix aquest employee`);
       });
     }
   });
 };
 
 //Inicialitzacio de cerca
-cercaPerId(1)
+cercaPerId(2)
   .then((res) => {
-      getSalary(res)
+    getSalary(res)
       .then((res1) => {
         console.log(`${res.name} té un sou de ${res1}`);
       })
       .catch((err) => {
         console.log(err);
       });
+
+  }).catch((err) => {
+    console.log(err);
   })
+
+//console.log(cercaPerId(1));
 
 module.exports = {
   cercaPerId,
   getSalary
-  
+
 }
