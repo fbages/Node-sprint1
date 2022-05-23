@@ -11,7 +11,7 @@ async function codificador(ruta) {
     const source = fs.createReadStream(ruta,{encoding:'hex'});
     const destiHex = fs.createWriteStream(rutaHex);
     source.pipe(zlib.createGzip()).pipe(destiHex);
-    console.log(`Fitxer en Hex gravat`)
+    console.log(`Fitxer en Hex gravat`);
     
     const rutaBase64 = path.join(ruta,'/../','comprimitBase64.txt.gz');
 
