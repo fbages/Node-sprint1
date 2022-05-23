@@ -69,10 +69,6 @@ module.exports = {
 }
 
 /*
-exports.resta = resta;
-exports.multiplica = multiplica;
-exports.dividir = dividir;
-
 console.log(suma(arr0), resta(arr1), multiplica(arr0), dividir(arr2));
 suma(arr0)
 resta(arr1); //Si vols restar ha de portar el signe negatiu

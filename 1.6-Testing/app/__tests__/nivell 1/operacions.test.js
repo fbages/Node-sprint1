@@ -1,4 +1,4 @@
-const operacions = require('../Operacions');
+const operacions = require('../../Operacions');
 
 test('Suma : [3, 6, 42, 1] to equal 52', () => {
   expect(operacions.suma([3, 6, 42, 1])).toBe(52);

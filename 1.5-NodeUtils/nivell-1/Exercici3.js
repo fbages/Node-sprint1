@@ -7,11 +7,11 @@ const zlib = require('zlib');
 const NOMFITXER = "text.txt";
 const RUTACARPETA = path.join(__dirname, "fitxers");
 const RUTAFITXER = path.join(RUTACARPETA, NOMFITXER);
-const RUTADESTI = path.join(RUTACARPETA,'comprimit2.txt.gz');
+const RUTADESTI = path.join(RUTACARPETA,'comprimit.txt.gz');
 
 
 //Readstream
-const source = fs.createReadStream(RUTAFITXER,{encoding:'hex'});
+const source = fs.createReadStream(RUTAFITXER);
 const desti = fs.createWriteStream(RUTADESTI);
 
 //Pipeline
