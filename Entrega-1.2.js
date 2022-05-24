@@ -1,6 +1,8 @@
 ///////////////1.2-CLASSES & ARROW FUNCTIONS/////////////////////
 //////////////nivell -1 Exercici1////////////////
-((a,b)=>{console.log(a+b)})(2,3)
+
+const resultat = ((a,b)=>{return (a+b)})(2,3)
+console.log(resultat);
 
 //////////////nivell -2 Exercici1////////////////
 const result = (valor)=>{
@@ -29,12 +31,12 @@ console.log(usuari1.dirNom());
 
 //////////////nivell -3 Exercici1////////////////
 //Funcio creadora
-function Cotxes(marca){
+let cotxe = function (marca){
     this.model = marca;
 }
 
-let cotxeJoan = new Cotxes("Hyundai");
-let cotxeMarta = new Cotxes("Seat");
-let cotxeFrancesc = new Cotxes("VW");
+let cotxeJoan = new cotxe("Hyundai");
+let cotxeMarta = new cotxe("Seat");
+let cotxeFrancesc = new cotxe("VW");
 
 console.log(cotxeMarta);
