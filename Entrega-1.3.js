@@ -2,16 +2,17 @@
 //////////////nivell -1 Exercici1////////////////
 
 function Exercici11(ENTRADA) {
+  function promesa1() {
+    return new Promise((resolve, reject) => {
+      if (ENTRADA) {
+        resolve("hola");
+      } else {
+        reject("adeu");
+      }
+    });
+  }
 
-  const promesa1 = new Promise((resolve, reject) => {
-    if (ENTRADA) {
-      resolve("hola");
-    } else {
-      reject("adeu");
-    }
-  });
-
-  promesa1
+  promesa1()
     .then((res) => {
       //resposta quan la promesa ja està completada
       console.log(`
@@ -26,26 +27,23 @@ function Exercici11(ENTRADA) {
 
 //////////////nivell -1 Exercici2////////////////
 
-function Exercici12(input){
+function Exercici12(input) {
+  function calcul(resultat) {
+    if(resultat < 10){
+     return `/////// Nivell 1 Exercici 2 //// La potència del valor introduit és superior a 100 : ${resultat}`;
+    } else {
+     return `/////// Nivell 1 Exercici 2 //// La potència del valor introduit és inferior a 100 : ${resultat}`;
+    }
+  };
 
-  let mesGran = (resultat) => {
-    console.log(`
-    /////// Nivell 1 Exercici 2 //// La potència del valor introduit és superior a 100 : ${resultat}`);
+  const result = (input, callback) => {
+    const potencia = input ** 2;
+    console.log(callback(potencia));
   };
   
-  let mesPetit = (resultat) => {
-  console.log(`
-  /////// Nivell 1 Exercici 2 //// La potència del valor introduit és inferior a 100 : ${resultat}`);
-};
 
-const result = (input, cb) => {
-  const calcul = input ** 2;
-  cb(calcul);
-};
-
-//Evaluar quin callback escollir
-mostrarResultat = input >= 10 ? mesGran : mesPetit;
-result(9, mostrarResultat);
+  //Evaluar 
+  result(input,calcul);
 }
 
 //////////////nivell -2 Exercici1////////////////
@@ -81,41 +79,48 @@ let salaries = [
   },
 ];
 
+
 //Funcio getEmployee
-const getEmployee = (index) => {
-  return new Promise((resolve, reject) => {
-    if (index < employees.length) {
-      resolve(employees[index]);
+  const getEmployee = (index) => {
+    return new Promise((resolve, reject) => {
+      const employee = employees.find(employee => employee.id === index)
+  
+      if (employee) {
+      resolve(employee);
     } else {
       reject(
         `Has escollit un index que no correspont a una persona de la llista, l'últim índex és ${
           employees.length - 1
         }.`
-      );
-    }
-  });
-};
+        );
+      }
+    });
+  };
+  
+function Exercici21(){
+  return console.log(getEmployee(1));
+}
 
 //////////////nivell -2 Exercici2////////////////
 
 //funcio getSalary
-let index;
+ 
 const getSalary = (employee) => {
-  return new Promise((resolve, reject) => {
-    if (employee == undefined) {
+    //console.log(employee);
+    return new Promise((resolve, reject) => {
+    let salaryEmployee = salaries.find(salary => salary.id === employee.id);
+    //console.log(salaryEmployee);
+    if (salaryEmployee == undefined) {
       reject(console.log(`No hi ha cap objecte a employees com l'introduit`));
     } else {
-      employees.map((item) => {
-        const resultat = item.id == employee.id ? employee.id : -1;
-        //console.log(resultat);
-        if (resultat != -1) {
-          index = resultat - 1;
-          resolve(salaries[index].salary);
-        }
-      });
+      resolve(salaryEmployee.salary);
     }
   });
 };
+
+function Exercici22(){
+  console.log(getSalary(employees[0]));
+}
 
 //////////////nivell -2 Exercici3////////////////
 
@@ -163,16 +168,16 @@ function Exercici31() {
 ////////////////////////////EXECUCIO DELS EXERCICIS///////////////////////////
 
 //nivell 1 Exercici 1
-Exercici11(true); //false per fer reject
+// Exercici11(true); //false per fer reject
 
 // //nivell 1 Exercici 2
-// Exercici12(9); //Introduir un número més gran o petit de 10 per fer els dos casos
+// Exercici12(9); //Introduir un número més gran o més petit de 10 per fer els dos casos
 
 // //nivell 2 Exercici 1
-// console.log(getEmployee(0));
+//  Exercici21();
 
 // //nivell 2 Exercici 2
-// console.log(getSalary(employees[2]));
+ Exercici22();
 
 // //nivell 2 Exercici 3
 // Exercici23();

@@ -31,12 +31,26 @@ console.log(usuari1.dirNom());
 
 //////////////nivell -3 Exercici1////////////////
 //Funcio creadora
-let cotxe = function (marca){
-    this.model = marca;
+class Cotxe{
+    constructor(marca){
+        if(this.constructor === Cotxe){
+            throw new Error("No es pot crear una clase abstracta");
+        };
+        this.model = marca;
+    }
+    getmodel() {
+        throw new Error("No es pot crear una clase abstracta");
+        }
 }
 
-let cotxeJoan = new cotxe("Hyundai");
-let cotxeMarta = new cotxe("Seat");
-let cotxeFrancesc = new cotxe("VW");
+class CotxeEuropeu extends Cotxe {
+    getmodel() {
+        return this.model = "Model europeu";
+    }
+}
 
-console.log(cotxeMarta);
+let cotxeJoan = new CotxeEuropeu("Fiat");
+let cotxeMarta = new CotxeEuropeu("Seat");
+let cotxeFrancesc = new CotxeEuropeu("VW");
+// let cotxeRamon = new Cotxe('Opel') //No deixa crear 
+console.log(cotxeMarta.getmodel());
