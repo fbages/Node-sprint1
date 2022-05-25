@@ -1,31 +1,15 @@
-//functions validadores
-function arraycheck(arr) {
-    return Array.isArray(arr);
-}
 
 //functions operacionals
-function suma(arr) {
-  if (arraycheck(arr)) {
-    let result = 0;
-    arr.forEach((element) => {
-      result += element;
-    });
-    return result;
-  } else {
-    return (result = "No és un array");
-  }
+function suma(...args) {
+  let result = args.reduce((pre, after) => {
+    return pre + after
+  });
+  return result;
 }
 
-function resta(arr) {
-  if (arraycheck(arr)) {
-    let result = 0;
-    arr.forEach((element) => {
-      result += element;
-    });
-    return result;
-  } else {
-    return (result = "No és un array");
-  }
+function resta(primer, ...args) {
+    return args.reduce((pre, after) =>  pre - after, primer);
+  
 }
 
 function multiplica(arr) {
@@ -49,7 +33,7 @@ function dividir(arr) {
     } else if (arr.length > 2) {
       result = "Hi ha masses valors";
     } else {
-        result = "Infinit";
+      result = "Infinit";
     }
     return result;
   } else {
@@ -57,15 +41,16 @@ function dividir(arr) {
   }
 }
 
-let arr0 = [3, 6, 42, 1];
+console.log(suma(3, 6, 42, 1));
+console.log(resta(100, 1, 2, 3));
 let arr1 = [3, -16, 42, -1];
 let arr2 = [3, 6];
 
 module.exports = {
-    suma,
-    resta,
-    multiplica,
-    dividir
+  suma,
+  resta,
+  multiplica,
+  dividir
 }
 
 /*
