@@ -1,4 +1,4 @@
-const Exercici2 = require('../../1.2 - nivell2/Exercici2');
+const Exercici2 = require('../../nivell 2/1.2 - nivell2/Exercici2');
 const nom = require('../../__mocks__/Persona')
 
 jest.mock('../../__mocks__/Persona')

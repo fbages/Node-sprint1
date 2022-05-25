@@ -1,4 +1,4 @@
-const Exercici1 = require('../../1.4 - nivell1/Exercici1');
+const Exercici1 = require('../../nivell 1/1.4 - nivell1/Exercici1');
 
 test(`Passat un index ha de tornar un employee`, async ()=>{
     const data = await Exercici1.cercaPerId(0);

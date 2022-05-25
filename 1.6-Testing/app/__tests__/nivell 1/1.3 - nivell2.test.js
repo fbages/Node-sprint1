@@ -1,4 +1,4 @@
-const Exercici3 = require('../../1.3 - nivell2/Exercici3');
+const Exercici3 = require('../../nivell 1/1.3 - nivell2/Exercici3');
 
 // expect(response).rejects assumes response to be a Promise. However, you're already using await, so response is not a Promise - it is the resolution value of that promise.
 // Remove the await, or (if you're getting a response rather than a promise rejection) keep the await but stop matching on .rejects.

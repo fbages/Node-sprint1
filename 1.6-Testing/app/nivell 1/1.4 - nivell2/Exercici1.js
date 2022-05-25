@@ -47,11 +47,11 @@ function validValor(valor){
 }
 
 //////INICI////////////////
-(async function principal(){
-    let resultat = await dobles(20, 13, 3);
-    console.log(resultat);
+// (async function principal(){
+//     let resultat = await dobles(20, 13, 3);
+//     console.log(resultat);
 
-})()
+// })()
 
 
 module.exports = {
